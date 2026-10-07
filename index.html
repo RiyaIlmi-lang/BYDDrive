@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b120e">
+
+<title>EV Drive | Mobil Listrik BYD</title>
+
+<style>
+
+/* =========================
+   DASAR WEBSITE
+========================= */
+
+:root {
+    --black: #080c09;
+    --dark: #0d1510;
+    --dark2: #142019;
+    --green: #173d28;
+    --green2: #244f35;
+    --lightgreen: #d8eadc;
+    --white: #ffffff;
+    --gray: #aab5ad;
+    --line: rgba(255,255,255,0.10);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 92%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background: rgba(8,12,9,0.94);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #a9d7b4;
+}
+
+.menu {
+    display: flex;
+    gap: 22px;
+
+    font-size: 13px;
+}
+
+.menu a {
+    color: #d7ddd9;
+}
+
+.menu a:hover {
+    color: var(--lightgreen);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(58,105,72,0.55),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #080c09,
+            #16251b
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -150px;
+    bottom: -200px;
+
+    border-radius: 50%;
+
+    background: rgba(89,145,103,0.10);
+
+    filter: blur(30px);
+}
+
+.hero-content {
+    max-width: 720px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.small-title {
+    color: #b9dfc2;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 78px);
+
+    line-height: 1.03;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #b9dfc2;
+}
+
+.hero p {
+    max-width: 570px;
+
+    color: #b6c0b9;
+
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 20px;
+
+    border-radius: 7px;
+
+    border: 1px solid var(--line);
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--lightgreen);
+
+    color: #173d28;
+
+    border-color: var(--lightgreen);
+}
+
+.btn-dark {
+    background: transparent;
+
+    color: white;
+}
+
+
+/* =========================
+   INFO BAR
+========================= */
+
+.info-bar {
+    border-bottom: 1px solid var(--line);
+
+    background: #0d1510;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+
+    padding: 25px 0;
+}
+
+.info {
+    text-align: center;
+
+    color: var(--gray);
+
+    font-size: 12px;
+}
+
+.info strong {
+    display: block;
+
+    color: white;
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+    padding: 70px 0;
+}
+
+.section-label {
+    color: #b9dfc2;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: clamp(28px,5vw,42px);
+
+    margin-bottom: 8px;
+}
+
+.section-description {
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+.catalog-tools {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 28px 0;
+}
+
+.search {
+    flex: 1;
+
+    min-width: 200px;
+
+    padding: 13px 15px;
+
+    border-radius: 7px;
+
+    border: 1px solid var(--line);
+
+    background: #121b15;
+
+    color: white;
+
+    outline: none;
+}
+
+.search:focus {
+    border-color: #7ea889;
+}
+
+.filter {
+    padding: 11px 15px;
+
+    border-radius: 7px;
+
+    border: 1px solid var(--line);
+
+    background: #121b15;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.filter.active {
+    background: var(--lightgreen);
+
+    color: #173d28;
+
+    border-color: var(--lightgreen);
+}
+
+
+/* =========================
+   KATALOG HORIZONTAL
+========================= */
+
+.catalog-wrapper {
+    position: relative;
+}
+
+.catalog {
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+
+    padding-bottom: 18px;
+
+    scrollbar-width: none;
+}
+
+.catalog::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   CARD MOBIL
+========================= */
+
+.car-card {
+    flex: 0 0 310px;
+
+    scroll-snap-align: start;
+
+    background: #111a14;
+
+    border: 1px solid var(--line);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: 0.25s;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(200,230,205,0.35);
+}
+
+
+/* AREA FOTO SEMENTARA */
+
+.car-image {
+    height: 205px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #3a6547,
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #263a2c,
+            #101611
+        );
+
+    position: relative;
+}
+
+.car-image small {
+    color: #cbe5d0;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.car-image h3 {
+    font-size: 31px;
+
+    letter-spacing: 2px;
+
+    margin-top: 7px;
+}
+
+.car-image::after {
+    content: "BYD";
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 16px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #b9dfc2;
+}
+
+
+/* INFO MOBIL */
+
+.car-info {
+    padding: 20px;
+}
+
+.category {
+    display: inline-block;
+
+    color: #b9dfc2;
+
+    border: 1px solid #41614a;
+
+    border-radius: 5px;
+
+    padding: 3px 7px;
+
+    font-size: 10px;
+
+    margin-bottom: 10px;
+}
+
+.car-info h2 {
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+.car-info p {
+    color: var(--gray);
+
+    font-size: 13px;
+
+    min-height: 45px;
+}
+
+.car-button {
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   SCROLL HINT
+========================= */
+
+.scroll-hint {
+    text-align: right;
+
+    color: #849188;
+
+    font-size: 11px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   PROMO
+========================= */
+
+.promo-box {
+    padding: 40px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #183a25,
+            #0d1811
+        );
+
+    border: 1px solid var(--line);
+}
+
+.promo-box h2 {
+    font-size: clamp(28px,5vw,44px);
+
+    max-width: 700px;
+
+    line-height: 1.15;
+
+    margin-bottom: 15px;
+}
+
+.promo-box p {
+    color: #bac7be;
+
+    max-width: 620px;
+}
+
+
+/* =========================
+   CARA PEMBELIAN
+========================= */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 16px;
+
+    margin-top: 30px;
+}
+
+.step {
+    padding: 24px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--line);
+
+    background: #101812;
+}
+
+.step-number {
+    color: #b9dfc2;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+.step h3 {
+    margin: 10px 0 5px;
+
+    font-size: 17px;
+}
+
+.step p {
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   KONTAK
+========================= */
+
+.contact-box {
+    padding: 38px;
+
+    border-radius: 15px;
+
+    background: var(--lightgreen);
+
+    color: #173d28;
+}
+
+.contact-box p {
+    color: #3c5d46;
+
+    max-width: 600px;
+
+    margin: 10px 0 22px;
+}
+
+.contact-box .btn-primary {
+    background: #173d28;
+
+    color: white;
+
+    border-color: #173d28;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid var(--line);
+
+    padding: 30px 0;
+
+    color: #7f8a83;
+
+    font-size: 11px;
+}
+
+.footer-content {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .menu {
+        gap: 12px;
+
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 590px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+
+        letter-spacing: -2px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .info {
+        text-align: left;
+
+        padding-left: 5px;
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+    .car-card {
+        flex: 0 0 84%;
+    }
+
+    .catalog {
+        gap: 13px;
+    }
+
+    .promo-box,
+    .contact-box {
+        padding: 27px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* HP SANGAT KECIL */
+
+@media(max-width:380px) {
+
+    .menu a:nth-child(3) {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .car-card {
+        flex: 0 0 88%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header>
+
+<div class="container navbar">
+
+<a href="#home" class="logo">
+EV <span>DRIVE.</span>
+</a>
+
+<nav class="menu">
+
+<a href="#home">
+Beranda
+</a>
+
+<a href="#katalog">
+Katalog
+</a>
+
+<a href="#layanan">
+Layanan
+</a>
+
+<a href="#kontak">
+Kontak
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="container hero-content">
+
+<div class="small-title">
+ELECTRIC MOBILITY
+</div>
+
+<h1>
+Drive the
+<span>Future.</span>
+</h1>
+
+<p>
+Temukan pilihan mobil listrik BYD
+dan konsultasikan kebutuhan kendaraanmu
+langsung bersama sales.
+</p>
+
+<div class="buttons">
+
+<a
+href="#katalog"
+class="btn btn-primary">
+
+Lihat Katalog
+
+</a>
+
+<a
+href="#kontak"
+class="btn btn-dark">
+
+Konsultasi Sales ↗
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+INFO
+========================= -->
+
+<div class="info-bar">
+
+<div class="container info-grid">
+
+<div class="info">
+
+<strong>
+Pilihan BYD
+</strong>
+
+Katalog kendaraan listrik
+
+</div>
+
+
+<div class="info">
+
+<strong>
+Konsultasi Personal
+</strong>
+
+Sesuai kebutuhanmu
+
+</div>
+
+
+<div class="info">
+
+<strong>
+Bantuan Pembelian
+</strong>
+
+Harga • Promo • Kredit
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+KATALOG
+========================= -->
+
+<section id="katalog">
+
+<div class="container">
+
+<div class="section-label">
+BYD LINEUP
+</div>
+
+<h2 class="section-title">
+Pilihan Mobil Listrik
+</h2>
+
+<p class="section-description">
+Geser ke kanan untuk melihat model lainnya.
+</p>
+
+
+<!-- SEARCH -->
+
+<div class="catalog-tools">
+
+<input
+type="search"
+id="search"
+class="search"
+placeholder="Cari model BYD..."
+>
+
+
+<button
+class="filter active"
+data-filter="all">
+
+Semua
+
+</button>
+
+
+<button
+class="filter"
+data-filter="SUV">
+
+SUV
+
+</button>
+
+
+<button
+class="filter"
+data-filter="Sedan">
+
+Sedan
+
+</button>
+
+
+<button
+class="filter"
+data-filter="MPV">
+
+MPV
+
+</button>
+
+</div>
+
+
+
+<!-- =========================
+MOBIL
+========================= -->
+
+<div class="catalog" id="catalog">
+
+
+
+<!-- ATTO 3 -->
+
+<div
+class="car-card"
+data-name="BYD ATTO 3"
+data-type="SUV">
+
+<div class="car-image">
+
+<small>
+FULL ELECTRIC
+</small>
+
+<h3>
+ATTO 3
+</h3>
+
+</div>
+
+
+<div class="car-info">
+
+<span class="category">
+SUV
+</span>
+
+<h2>
+BYD ATTO 3
+</h2>
+
+<p>
+SUV listrik untuk kebutuhan
+harian dan keluarga.
+</p>
+
+<a
+href="#kontak"
+class="btn btn-primary car-button wa-button"
+data-model="BYD ATTO 3">
+
+Tanya Penawaran
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- SEAL -->
+
+<div
+class="car-card"
+data-name="BYD SEAL"
+data-type="Sedan">
+
+<div class="car-image">
+
+<small>
+FULL ELECTRIC
+</small>
+
+<h3>
+SEAL
+</h3>
+
+</div>
+
+
+<div class="car-info">
+
+<span class="category">
+SEDAN
+</span>
+
+<h2>
+BYD SEAL
+</h2>
+
+<p>
+Sedan listrik dengan
+karakter sporty.
+</p>
+
+<a
+href="#kontak"
+class="btn btn-primary car-button wa-button"
+data-model="BYD SEAL">
+
+Tanya Penawaran
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- DOLPHIN -->
+
+<div
+class="car-card"
+data-name="BYD DOLPHIN"
+data-type="Hatchback">
+
+<div class="car-image">
+
+<small>
+FULL ELECTRIC
+</small>
+
+<h3>
+DOLPHIN
+</h3>
+
+</div>
+
+
+<div class="car-info">
+
+<span class="category">
+HATCHBACK
+</span>
+
+<h2>
+BYD DOLPHIN
+</h2>
+
+<p>
+Mobil listrik kompak
+untuk perkotaan.
+</p>
+
+<a
+href="#kontak"
+class="btn btn-primary car-button wa-button"
+data-model="BYD DOLPHIN">
+
+Tanya Penawaran
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- M6 -->
+
+<div
+class="car-card"
+data-name="BYD M6"
+data-type="MPV">
+
+<div class="car-image">
+
+<small>
+FULL ELECTRIC
+</small>
+
+<h3>
+M6
+</h3>
+
+</div>
+
+
+<div class="car-info">
+
+<span class="category">
+MPV
+</span>
+
+<h2>
+BYD M6
+</h2>
+
+<p>
+MPV listrik untuk
+perjalanan keluarga.
+</p>
+
+<a
+href="#kontak"
+class="btn btn-primary car-button wa-button"
+data-model="BYD M6">
+
+Tanya Penawaran
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- SEALION -->
+
+<div
+class="car-card"
+data-name="BYD SEALION 7"
+data-type="SUV">
+
+<div class="car-image">
+
+<small>
+FULL ELECTRIC
+</small>
+
+<h3>
+SEALION 7
+</h3>
+
+</div>
+
+
+<div class="car-info">
+
+<span class="category">
+SUV
+</span>
+
+<h2>
+BYD SEALION 7
+</h2>
+
+<p>
+SUV listrik modern
+dengan karakter sporty.
+</p>
+
+<a
+href="#kontak"
+class="btn btn-primary car-button wa-button"
+data-model="BYD SEALION 7">
+
+Tanya Penawaran
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="scroll-hint">
+Geser katalog ← →
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+PROMO
+========================= -->
+
+<section id="layanan">
+
+<div class="container">
+
+<div class="promo-box">
+
+<div class="section-label">
+PERSONAL EV CONSULTATION
+</div>
+
+<h2>
+Bingung Memilih Mobil Listrik?
+</h2>
+
+<p>
+Saya siap membantu membandingkan model,
+menjelaskan fitur, memberikan informasi
+promo, dan membantu proses pembelian.
+</p>
+
+<div class="buttons">
+
+<a
+href="#kontak"
+class="btn btn-primary">
+
+Konsultasi Sekarang ↗
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- STEPS -->
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Pilih Mobil
+</h3>
+
+<p>
+Pilih model BYD yang sesuai
+dengan kebutuhanmu.
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Konsultasi
+</h3>
+
+<p>
+Tanyakan harga, promo,
+dan simulasi pembiayaan.
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Test Drive
+</h3>
+
+<p>
+Atur jadwal test drive
+bersama sales.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+CONTACT
+========================= -->
+
+<section id="kontak">
+
+<div class="container">
+
+<div class="contact-box">
+
+<div class="section-label">
+PERSONAL SALES
+</div>
+
+<h2>
+Siap Memilih BYD?
+</h2>
+
+<p>
+Hubungi saya untuk mendapatkan informasi
+harga, promo, simulasi kredit, dan
+jadwal test drive.
+</p>
+
+<a
+href="#"
+id="mainWA"
+class="btn btn-primary">
+
+Chat WhatsApp ↗
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-content">
+
+<div>
+EV DRIVE. | Katalog Mobil Listrik
+</div>
+
+<div>
+Website informasi independen.
+Bukan situs resmi BYD.
+</div>
+
+<div>
+© 2026
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+
+<script>
+
+/*
+====================================
+GANTI NOMOR WHATSAPP DI SINI
+====================================
+
+Contoh:
+
+6281234567890
+
+Jangan gunakan:
+
++6281234567890
+081234567890
+62 812 3456
+*/
+
+const NOMOR_WA = "628XXXXXXXXXX";
+
+
+
+/* =========================
+WHATSAPP
+========================= */
+
+function bukaWhatsApp(pesan) {
+
+    if (!/^62\d{8,15}$/.test(NOMOR_WA)) {
+
+        alert(
+            "Silakan masukkan nomor WhatsApp sales terlebih dahulu."
+        );
+
+        return;
+
+    }
+
+
+    const url =
+        "https://wa.me/" +
+        NOMOR_WA +
+        "?text=" +
+        encodeURIComponent(pesan);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+
+/* =========================
+BUTTON WHATSAPP UTAMA
+========================= */
+
+document
+.getElementById("mainWA")
+.addEventListener(
+"click",
+function(event) {
+
+    event.preventDefault();
+
+    bukaWhatsApp(
+        "Halo, saya ingin konsultasi mengenai mobil listrik BYD."
+    );
+
+});
+
+
+
+/* =========================
+BUTTON SETIAP MOBIL
+========================= */
+
+document
+.querySelectorAll(".wa-button")
+.forEach(
+function(button) {
+
+    button.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const model =
+            this.dataset.model;
+
+
+        bukaWhatsApp(
+
+            "Halo, saya tertarik dengan " +
+            model +
+            ". Mohon informasi harga, promo, dan simulasi kredit terbaru."
+
+        );
+
+    });
+
+});
+
+
+
+/* =========================
+SEARCH
+========================= */
+
+const search =
+document.getElementById("search");
+
+
+const cards =
+document.querySelectorAll(".car-card");
+
+
+let kategori =
+"all";
+
+
+
+function filterMobil() {
+
+    const keyword =
+        search.value
+        .toLowerCase()
+        .trim();
+
+
+    cards.forEach(
+    function(card) {
+
+        const nama =
+            card.dataset.name
+            .toLowerCase();
+
+
+        const tipe =
+            card.dataset.type;
+
+
+        const cocokNama =
+            nama.includes(keyword);
+
+
+        const cocokKategori =
+            kategori === "all" ||
+            tipe === kategori;
+
+
+        if (
+            cocokNama &&
+            cocokKategori
+        ) {
+
+            card.style.display =
+                "block";
+
+        } else {
+
+            card.style.display =
+                "none";
+
+        }
+
+    });
+
+}
+
+
+
+search.addEventListener(
+"input",
+filterMobil
+);
+
+
+
+/* =========================
+FILTER KATEGORI
+========================= */
+
+document
+.querySelectorAll(".filter")
+.forEach(
+function(button) {
+
+    button.addEventListener(
+    "click",
+    function() {
+
+
+        kategori =
+            this.dataset.filter;
+
+
+        document
+        .querySelectorAll(".filter")
+        .forEach(
+        function(btn) {
+
+            btn.classList.remove(
+                "active"
+            );
+
+        });
+
+
+        this.classList.add(
+            "active"
+        );
+
+
+        filterMobil();
+
+    });
+
+});
+
+</script>
+
+
+</body>
+  </html>
